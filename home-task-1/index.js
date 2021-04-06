@@ -34,4 +34,24 @@ class Node {
   }
 }
 
-module.exports = {Node, Tree}
+class BSTNode {
+  constructor(data) {
+    this.data = data;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(data) {
+    if (data < this.data && this.left) {
+      this.left.add(data);
+    } else if (data < this.data) {
+      this.left = new BSTNode(data);
+    } else if (data > this.data && this.right) {
+      this.right.add(data);
+    } else if (data > this.data) {
+      this.right = new BSTNode(data);
+    }
+  }
+}
+
+module.exports = {Node, BSTNode, Tree}
