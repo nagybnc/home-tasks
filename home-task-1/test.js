@@ -8,9 +8,9 @@ describe("Node", () => {
     expect(typeof Node.prototype.constructor).toEqual("function");
   });
 
-  test("Node has a data and children properties", () => {
+  test("Node has a value and children properties", () => {
     const n = new Node("15");
-    expect(n.data).toEqual("15");
+    expect(n.value).toEqual("15");
     expect(n.children.length).toEqual(0);
   });
 
@@ -42,10 +42,10 @@ describe("BSTNode", () => {
     "    / \\   / \\ ",
     "   7  13 22  27 ",
     */
-    expect(node.left.data).toEqual(10);
-    expect(node.left.left.data).toEqual(7);
-    expect(node.right.data).toEqual(25);
-    expect(node.right.right.data).toEqual(27);
+    expect(node.left.value).toEqual(10);
+    expect(node.left.left.value).toEqual(7);
+    expect(node.right.value).toEqual(25);
+    expect(node.right.right.value).toEqual(27);
   });
 });
 
@@ -73,7 +73,7 @@ describe("Tree", () => {
     "   7  13 22  27 ",
     */
     t.traverseBF((node) => {
-      letters.push(node.data);
+      letters.push(node.value);
     });
 
     expect(letters).toEqual(["15", "10", "25", "7", "13", "22", "27"]);
@@ -97,7 +97,7 @@ describe("Tree", () => {
     "   7  13 22  27 ",
     */
     t.traverseDF((node) => {
-      letters.push(node.data);
+      letters.push(node.value);
     });
 
     expect(letters).toEqual(["15", "10", "7", "13", "25", "22", "27"]);

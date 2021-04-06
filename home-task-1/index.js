@@ -24,32 +24,32 @@ class Tree {
 }
 
 class Node {
-  constructor(data) {
-    this.data = data;
+  constructor(value) {
+    this.value = value;
     this.children = [];
   }
 
-  add(data) {
-    this.children.push(new Node(data));
+  add(value) {
+    this.children.push(new Node(value));
   }
 }
 
 class BSTNode {
-  constructor(data) {
-    this.data = data;
+  constructor(value) {
+    this.value = value;
     this.left = null;
     this.right = null;
   }
 
-  add(data) {
-    if (data < this.data && this.left) {
-      this.left.add(data);
-    } else if (data < this.data) {
-      this.left = new BSTNode(data);
-    } else if (data > this.data && this.right) {
-      this.right.add(data);
-    } else if (data > this.data) {
-      this.right = new BSTNode(data);
+  add(value) {
+    if (value < this.value && this.left) {
+      this.left.add(value);
+    } else if (value < this.value) {
+      this.left = new BSTNode(value);
+    } else if (value > this.value && this.right) {
+      this.right.add(value);
+    } else if (value > this.value) {
+      this.right = new BSTNode(value);
     }
   }
 }
